@@ -50,7 +50,8 @@ namespace cAlgo
         {
 
             //Chart.DrawTrendLine("trenddraw", Chart.Bars.Last(55).Low, Bars.ClosePrices, Chart.Bars.Last(0).Low, Bars.ClosePrices, "red");
-            var trendLine = Chart.DrawTrendLine("trendline_" + DateTime.Now.ToString(), Chart.FirstVisibleBarIndex + 100, Bars.HighPrices[Chart.LastVisibleBarIndex], Chart.LastVisibleBarIndex, Bars.HighPrices[Chart.LastVisibleBarIndex], Color.Red, 4, LineStyle.Solid);
+            var start = Chart.LastVisibleBarIndex - ((Chart.LastVisibleBarIndex - Chart.FirstVisibleBarIndex) / 2);
+            var trendLine = Chart.DrawTrendLine("trendline_" + DateTime.Now.ToString(), start, Bars.HighPrices[Chart.LastVisibleBarIndex], Chart.LastVisibleBarIndex, Bars.HighPrices[Chart.LastVisibleBarIndex], Color.Red, 4, LineStyle.Solid);
             trendLine.IsInteractive = true;
 
 
